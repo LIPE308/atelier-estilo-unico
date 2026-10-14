@@ -50,3 +50,37 @@ nav{font-size:14px}
 .photo-frame picture{display:block;width:100%;height:100%}
 .photo-frame img{transform:none;object-position:58% 68%}
 .hero-art figcaption a:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* Entry and exit choreography, inspired by editorial scroll references. */
+.hero-line{display:block}
+body.motion-enabled .hero h1,body.motion-enabled .hero-bottom,body.motion-enabled .photo-frame{animation:none!important}
+.motion-enabled .motion-item{opacity:0}
+.motion-enabled .motion-item.is-in{opacity:1}
+.motion-ready .motion-item{transition:opacity .38s ease-out!important;transition-delay:0s!important}
+.motion-ready .motion-item.is-in{transition-duration:.65s!important;transition-delay:var(--motion-delay,0ms)!important}
+.motion-full.motion-enabled .motion-item.is-below{transform:translate3d(0,38px,0)}
+.motion-full.motion-enabled .motion-item.is-above{transform:translate3d(0,-24px,0)}
+.motion-full.motion-enabled .motion-item.is-in{transform:translate3d(0,0,0)}
+.motion-full.motion-ready .motion-item{transition:opacity .4s ease-out,transform .5s cubic-bezier(.22,1,.36,1),clip-path .5s cubic-bezier(.22,1,.36,1)!important;transition-delay:0s!important}
+.motion-full.motion-ready .motion-item.is-in{transition-duration:.9s!important;transition-delay:var(--motion-delay,0ms)!important}
+.motion-full.motion-enabled .motion-title.is-below{clip-path:inset(0 0 100% 0)}
+.motion-full.motion-enabled .motion-title.is-above{clip-path:inset(100% 0 0 0)}
+.motion-full.motion-enabled .motion-title.is-in{clip-path:inset(-12% -4% -16% -4%)}
+.motion-photo .photo-frame img,.motion-photo.gallery-main img,.motion-photo .mini-gallery img{transform:scale(1);transition:transform 1.25s cubic-bezier(.22,1,.36,1)!important}
+.motion-full .motion-photo:not(.is-in) .photo-frame img,.motion-full .motion-photo.gallery-main:not(.is-in) img{transform:scale(1.045)}
+.gallery-main{overflow:hidden}
+.motion-full .hero-art.is-in .thread{animation:thread-travel 1.5s cubic-bezier(.22,1,.36,1) both!important}
+@keyframes thread-travel{from{stroke-dashoffset:70;opacity:0}to{stroke-dashoffset:0;opacity:.7}}
+.motion-enabled .motion-item:focus-within{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}
+.motion-toggle{grid-column:1/-1;justify-self:start;display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:transparent;color:var(--muted);padding:10px 14px;min-height:44px;font-size:13px}
+.motion-toggle:before{content:'◉';color:var(--rust);font-size:12px}
+.motion-toggle:hover{border-color:var(--rust);color:var(--ink)}
+@media(max-width:767px){
+  .motion-full.motion-enabled .motion-item.is-below{transform:translate3d(0,24px,0)}
+  .motion-full.motion-enabled .motion-item.is-above{transform:translate3d(0,-16px,0)}
+  .motion-full.motion-enabled .motion-item.is-in{transform:translate3d(0,0,0)}
+}
+@media print{
+  .motion-enabled .motion-item{opacity:1!important;transform:none!important;clip-path:none!important}
+  .motion-toggle,.floating{display:none!important}
+}
