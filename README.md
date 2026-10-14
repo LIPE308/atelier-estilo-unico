@@ -12,6 +12,14 @@ Execute `node server.mjs` e abra http://localhost:4173.
 - Galeria com publicações e fotos reais do perfil @atelie_estilounico.
 - WhatsApp com mensagem contextual, telefone e rota para o atelier.
 - Menu móvel acessível e perguntas frequentes.
+- Orçamento guiado por peça e serviço, com mensagem montada para o WhatsApp. Nenhum dado é enviado ao atelier sem o visitante enviar a mensagem no WhatsApp.
+
+## Referências de experiência
+
+- Anderson & Sheppard: apresentação dos bastidores, galeria e caminho até o atendimento. https://www.anderson-sheppard.co.uk/bespoke/
+- Huntsman: organização por serviço, clareza do processo e contato. https://www.huntsmansavilerow.com/pages/bespoke-tailoring
+
+A interpretação é própria: cores da marca local, imagens próprias do atelier, menus leves, detalhes expansíveis e orçamento guiado. Sem vídeos automáticos, rastreadores ou feeds incorporados para manter baixo consumo de memória.
 
 As fotografias e a marca pertencem ao Atelier. As imagens foram obtidas do Instagram público informado pelo usuário e do perfil público correspondente no Portal do Casamento. A paleta e a composição tipográfica foram interpretadas a partir das publicações da marca; a extração estática SkillUI não conseguiu identificar os tokens no Instagram.
 
