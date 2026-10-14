@@ -9,3 +9,39 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal-on{opacity:1;transform:none}}
 
 @media(min-width:351px) and (max-width:767px){.hero-copy .intro{grid-column:1/-1;grid-row:auto;font-size:25px}.hero-description{grid-column:1;margin:20px 0 0}.hero-copy .button{align-self:end}.hero-copy>.text-link{margin-top:20px}}
+
+/* Readable actions on desktop and touch screens. */
+.button{font-size:16px;font-weight:500;line-height:1.4;min-height:54px}
+.button.small{font-size:15px;min-height:48px}
+.text-link,.floating,.phone{font-size:15px}
+.floating{min-height:48px}
+nav{font-size:14px}
+.instagram-link span{font-size:13px}
+.reveal-on{opacity:0}
+.reveal-on.is-visible{opacity:1}
+.reveal-on:not(.is-visible){transition:none!important}
+.reveal-on:focus-within{opacity:1;transform:none!important;transition:none!important}
+@media(prefers-reduced-motion:no-preference){
+  .reveal-on{opacity:0;transform:translateY(26px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);transition-delay:var(--reveal-delay,0ms)}
+  .reveal-on.is-visible{opacity:1;transform:translateY(0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal-on{transform:none!important;transition:opacity .45s ease-out!important}
+}
+@media(max-width:1023px){
+  header{height:78px;padding-inline:24px}
+  .menu{display:flex;align-items:center;gap:12px;padding:12px 0;border:0;background:none;color:var(--ink);font-size:16px;min-height:44px}
+  .menu span{font-size:20px}
+  nav{display:none;position:absolute;top:78px;left:0;right:0;background:var(--paper);padding:26px 24px;box-shadow:0 14px 22px #30251f15;border-bottom:1px solid var(--line)}
+  nav.open{display:flex;flex-direction:column;align-items:stretch;gap:22px}
+  nav>a{font-size:16px}
+}
+@media(max-width:767px){
+  header{padding-inline:20px}
+  .hero-description{grid-column:1/-1;font-size:14px;max-width:300px;margin-top:18px}
+  .hero-copy .button{grid-column:1/-1;width:fit-content;font-size:16px;min-height:54px;padding:15px 20px;margin-top:18px;gap:26px}
+  .hero-copy>.text-link{font-size:15px}
+  .instagram-link{font-size:15px;flex-wrap:wrap;gap:10px}
+  .instagram-link span{font-size:13px}
+  .floating{font-size:15px;padding:12px 16px}
+}
